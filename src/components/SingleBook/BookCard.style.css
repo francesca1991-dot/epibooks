@@ -1,0 +1,23 @@
+.SingleBook {
+    min-height: 420px;
+    transition: border 0.3s ease;
+    }
+    .img-fluid{
+    height: 300px;
+    object-fit: cover; 
+     }
+     .card-title { font-size: 15px;
+     }
+     .card-body{
+     height:100px; 
+     padding: 10px 0 10px 5px;
+     display: flex;
+     align-items: center;
+     }
+     .SingleBook.selected {
+     border: 2px solid red; 
+     }
+     .Card-Container{
+        border: 1px solid rgb(193, 187, 187);
+     }
+     
