@@ -34,7 +34,7 @@ const AllTheBooks = () => {
           <h1>Lista dei libri</h1>
           </Col>
           <Col>
-          <Form inline className="pb-3">
+          <Form className="pb-3">
         <Row className="ms-5">
           <Col sm="auto" className="ps-5">
             <Form.Control

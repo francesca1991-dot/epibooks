@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 
 function CommentList(props) {
   const defaultProps = {
- comment: "Libro interessante",
+ comment: "Libro interessante, lo consiglierei",
  rate: "5",
  elementId: "0000"
 }
@@ -15,13 +15,15 @@ function CommentList(props) {
     elementId = defaultProps.elementId} = props;
 
   return (
-      <Card className="m-2">
-      <Card.Header as="h5">{rate}/5</Card.Header>
+      <Card className="m-2 small">
+      <Card.Header as="h6">{rate}/5</Card.Header>
       <Card.Body className="d-flex flex-column align-items-start h-auto">
-        <Card.Title>{elementId}-Filippo</Card.Title>
-        <Card.Text>
+      <div className="d-flex justify-content-start">
+        <Card.Title className="h6 mb-0 me-2" style={{ lineHeight: "1.4" }}>Filippo</Card.Title>
+        <Card.Text className="ms-1">
           {comment}
         </Card.Text>
+      </div>
       </Card.Body>
     </Card>
   )
