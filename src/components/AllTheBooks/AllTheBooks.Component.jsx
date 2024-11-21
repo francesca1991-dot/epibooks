@@ -59,7 +59,7 @@ const AllTheBooks = () => {
          <SingleBook 
          title={book.title} 
          image = {book.img}
-         id = {index+1} key = {"book" + index }
+         id = {index+1} key = {"book" + index } asin={book.asin}
          />)
             } )
         }

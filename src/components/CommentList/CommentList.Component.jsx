@@ -3,12 +3,12 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 
-function CommentList({commentoObj}) {
+function CommentList({commentObj}) {
 
   const {
     author,
     comment,
-    rate} = commentoObj;
+    rate} = commentObj;
    
 
   return (

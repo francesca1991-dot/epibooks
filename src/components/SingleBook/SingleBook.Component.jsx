@@ -43,7 +43,7 @@ function SingleBook(props) {
           </Col>
           {selected && (
             <Col sm={6} md={12} lg={10} className="p-0">
-              <CommentArea asin={props.asin} />
+              <CommentArea asin={asin} />
             </Col>
           )}
         </Row>
