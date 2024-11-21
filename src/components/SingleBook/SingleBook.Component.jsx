@@ -9,7 +9,7 @@ import "./SingleBook.style.css";
 import CommentArea from "../CommentArea/CommentArea.Component";
 
 function SingleBook(props) {
-  const { title, image } = props;
+  const { title, image, asin } = props;
 
   const [selected, setSelected] = useState(false);
 
@@ -43,7 +43,7 @@ function SingleBook(props) {
           </Col>
           {selected && (
             <Col sm={6} md={12} lg={10} className="p-0">
-              <CommentArea asin={props.book.asin} />
+              <CommentArea asin={props.asin} />
             </Col>
           )}
         </Row>
