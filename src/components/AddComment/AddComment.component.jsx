@@ -17,9 +17,6 @@ import {
 const AddComment = ({ asin, fetchData}) => {
   const [comment, setComment] = useState("");
   const [rating, setRating] = useState("");
-  const [author, setAuthor] = useState("");
-
-//chiamata post
 
 const postData = async () => {
   const response = await fetch(POST_COMMENT_URL, {
@@ -57,7 +54,6 @@ const handleSubmit = (event) => {
 
   setComment("");
   setRating("");
-  setAuthor("");
 };
   
     return (
