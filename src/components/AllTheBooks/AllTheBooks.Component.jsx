@@ -5,7 +5,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import './AllTheBooks.style.css';
 
 // data import
 import historylist from '../../books/history.json';
@@ -14,8 +13,7 @@ import historylist from '../../books/history.json';
 import SingleBook from '../SingleBook/SingleBook.Component';
  
 
-const AllTheBooks = () => {
-  const [bookList, setBookList] = useState(historylist);
+const AllTheBooks = ({booklist, setBookList}) => {
 
   const handleChange = (event) => {
     console.log(event.target.value);
@@ -28,33 +26,16 @@ const AllTheBooks = () => {
 
   return (
     <div>
-      <Container>
+     <Container>
         <Row>
           <Col>
           <h1>Lista dei libri</h1>
-          </Col>
-          <Col>
-          <Form className="pb-3">
-        <Row className="ms-5">
-          <Col sm="auto" className="ps-5">
-            <Form.Control
-              type="text"
-              placeholder="Cerca libro"
-              className=" Custom-Input mr-sm-2"
-              onChange= {(e) => handleChange(e)}
-            />
-          </Col>
-          <Col sm="auto">
-            <Button className="Custom-Button" type="submit">Cerca</Button>
-          </Col>
-        </Row>
-      </Form>
           </Col>
        </Row>
       </Container>
       <Container>
         <Row>
-        {bookList.map((book, index) =>{
+        {booklist.map((book, index) =>{
          return ( 
          <SingleBook 
          title={book.title} 
@@ -66,8 +47,7 @@ const AllTheBooks = () => {
        </Row>
       </Container>
     </div>
-  )
-}
+  )};
 
 export default AllTheBooks;
 
