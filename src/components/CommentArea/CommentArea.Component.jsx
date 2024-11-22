@@ -14,7 +14,6 @@ function CommentArea({asin})  {
   const [commentList, setCommentList] = useState([]);
   const [comment, setComment] = useState('');
   const [rating, setRating] = useState('');
-  const [author, setAuthor] = useState('');
 
    const fetchData = async (asin) => {
     const url = `https://striveschool-api.herokuapp.com/api/books/${asin}/comments/`;
@@ -53,7 +52,8 @@ return (
         />
       ))}
       <AddComment asin={asin}
-        fetchData={fetchData}/>
+        fetchData={fetchData}
+      />
     </div>
   );
 };

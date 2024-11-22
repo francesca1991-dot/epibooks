@@ -27,7 +27,7 @@ const postData = async () => {
     method: "POST",
     body: JSON.stringify({
       comment: comment,
-      rate: rating,
+      rate: parseInt(rating, 10),
       elementId: asin,
     }),
   });
@@ -48,6 +48,11 @@ const handleSubmit = (event) => {
   if (!rating || !comment) {
     alert("Tutti i campi devono essere compilati.");
     return; 
+  }
+
+  if (!Number.isInteger(parseInt(rating, 10)) || rating < 1 || rating > 5) {
+    alert("Il rating deve essere un numero tra 1 e 5.");
+    return;
   }
 
   postData();

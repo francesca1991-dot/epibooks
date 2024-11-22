@@ -8,12 +8,12 @@ function CommentList(props) {
   const {
     author,
     comment,
-    rating} = props.commentObj;
+    rate} = props.commentObj;
    
 
   return (
       <Card className="m-2 small">
-      <Card.Header as="h6">{rating}/5</Card.Header>
+      <Card.Header as="h6">{rate}/5</Card.Header>
       <Card.Body className="d-flex flex-column align-items-start h-auto">
         <Card.Text className="ms-1">
           <span className="fw-bold">{author}</span>
