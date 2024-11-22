@@ -39,26 +39,22 @@ const postData = async () => {
 
   if (response.ok) {
     alert("Commento aggiunto con successo!");
-    fetchData(); // Aggiorna i dati
+    fetchData();
   } else {
     alert("Errore nell'aggiunta del commento.");
   }
 };
 
-// Gestione dell'invio del form
 const handleSubmit = (event) => {
   event.preventDefault();
 
-  // Controllo di validazione
-  if (!author || !rating || !comment) {
+  if (!rating || !comment) {
     alert("Tutti i campi devono essere compilati.");
-    return; // Interrompe l'esecuzione se i campi non sono validi
+    return; 
   }
 
-  // Se la validazione è superata, invia i dati
   postData();
 
-  // Resetta i campi del form
   setComment("");
   setRating("");
   setAuthor("");
@@ -73,10 +69,10 @@ const handleSubmit = (event) => {
             <Col sm={9} className="ps-4">
               <Form.Control
                 type="text"
-                placeholder="Autore recensione"
+                placeholder="Cosa ne pensi di questo libro?"
                 className="custom-input"
-                onChange={(e) => setAuthor(e.target.value)}
-                value={author}
+                onChange={(e) => setComment(e.target.value)}
+                value={comment}
               />
             </Col>
             <Col sm={3} className="ps-4">
@@ -90,15 +86,6 @@ const handleSubmit = (event) => {
             </Col>
           </Row>
           <Row className="my-1">
-            <Col sm={12} className="ps-4">
-              <Form.Control
-                type="text"
-                placeholder="Cosa ne pensi di questo libro?"
-                className="custom-input"
-                onChange={(e) => setComment(e.target.value)}
-                value={comment}
-              />
-            </Col>
           </Row>
           <Row className="ms-1 mt-2">
             <Col sm="auto">
