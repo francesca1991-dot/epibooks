@@ -76,6 +76,7 @@ return (
       ))}
       <AddComment asin={asin}
         fetchData={fetchData}
+        setCommentList={setCommentList}
          />
     </div>
   );
