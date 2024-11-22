@@ -16,8 +16,9 @@
   align-items: center;
 }
 .Card-Container:has(.SingleBook.selected) {
-  border: 2px solid red;
+  border: 2px solid red; 
 }
 .Card-Container {
   border: 1px solid rgb(193, 187, 187);
 }
+

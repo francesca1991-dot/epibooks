@@ -1,0 +1,4 @@
+.comment-area{
+overflow-y: scroll;
+max-height: 420px;
+}

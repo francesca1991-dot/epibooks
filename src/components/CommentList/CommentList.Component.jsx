@@ -3,14 +3,10 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 
-function CommentList(props) {
-
-  const {
-    author,
-    comment,
-    rate} = props.commentObj;
-   
-
+function CommentList({ commentObj, deleteComment }) {
+  const { author, comment, rate, _id } = commentObj; 
+ 
+ 
   return (
       <Card className="m-2 small">
       <Card.Header as="h6">{rate}/5</Card.Header>
@@ -19,6 +15,14 @@ function CommentList(props) {
           <span className="fw-bold">{author}</span>
           {"- " + comment}
         </Card.Text>
+        <div className="d-flex justify-content-end">
+          <Button variant="outline-primary" onClick={() => console.log("ho eliminato il commento")}>
+            Modifica
+          </Button>
+          <Button variant="outline-danger" className="ms-2" onClick={() => deleteComment(_id)}>
+         Elimina
+          </Button>
+        </div>
       </Card.Body>
     </Card>
   )

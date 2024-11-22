@@ -14,7 +14,7 @@ import {
 } from "../../utils/costants";
 
 
-const AddComment = ({ asin, fetchData}) => {
+const AddComment = ({ asin, fetchData, setCommentList}) => {
   const [comment, setComment] = useState("");
   const [rating, setRating] = useState("");
 
@@ -36,7 +36,8 @@ const postData = async () => {
 
   if (response.ok) {
     alert("Commento aggiunto con successo!");
-    fetchData();
+    const newComment = await response.json();
+    setCommentList(prevComments => [newComment, ...prevComments]);
   } else {
     alert("Errore nell'aggiunta del commento.");
   }

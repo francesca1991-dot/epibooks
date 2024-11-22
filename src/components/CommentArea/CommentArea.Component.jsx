@@ -9,6 +9,9 @@ import AddComment from '../AddComment/AddComment.component';
 import { GET_COMMENT_URL, POST_COMMENT_URL, PUT_COMMENT_URL, API_KEY } 
 from '../../utils/costants';
 
+//style imports
+import './CommentArea.style.css';
+
 
 function CommentArea({asin})  {
   const [commentList, setCommentList] = useState([]);
@@ -42,20 +45,41 @@ function CommentArea({asin})  {
   console.log(commentList); 
 
 
+  const deleteComment = async (commentId) => {
+    const url = `https://striveschool-api.herokuapp.com/api/comments/${commentId}`;
+    
+    const response = await fetch(url, {
+      method: 'DELETE',
+      headers: {
+        Authorization: API_KEY,
+      },
+    });
+  
+    if (!response.ok) {
+    alert("Errore nell'eliminazione del commento.")}
+     else {
+      setCommentList(prevComments => prevComments.filter(comment => comment._id !== commentId));
+    }
+     
+  };
+  
+
 return (
   <div className="comment-area">
       <h3 className="m-2">Recensioni {asin}</h3>
       {commentList.map((commentObj, index) => (
         <CommentList
           commentObj={commentObj}
-          key={commentObj._id + index}
+          key={commentObj._id + index} 
+          deleteComment={deleteComment}
         />
       ))}
       <AddComment asin={asin}
         fetchData={fetchData}
-      />
+         />
     </div>
   );
 };
+
 
 export default CommentArea;
