@@ -42,34 +42,6 @@ function CommentArea({asin})  {
 
   console.log(commentList); 
 
-//chiamata post
-
-const postData = async () => {
-  const response = await fetch(POST_COMMENT_URL, {
-    headers: {
-      Authorization: API_KEY,
-      "Content-Type": "application/json",
-    },
-    method: "POST",
-    body: JSON.stringify({
-      comment: comment,
-      rate: rating,
-      elementId: asin, 
-    }),
-  });
-
-  console.log(response);
-  
-  if (response.ok) {
-    alert("Commento aggiunto con successo!");
-    setComment(""); 
-    setRating(""); 
-    setAuthor(""); 
-    fetchData(); 
-  } else {
-    alert("Errore nell'aggiunta del commento.");
-  }
-};
 
 return (
   <div className="comment-area">
@@ -81,14 +53,7 @@ return (
         />
       ))}
       <AddComment asin={asin}
-        fetchData={fetchData}
-        comment={comment}
-        setComment={setComment}
-        rating={rating}
-        setRating={setRating}
-        author={author}
-        setAuthor={setAuthor}
-        postData={postData}/>
+        fetchData={fetchData}/>
     </div>
   );
 };

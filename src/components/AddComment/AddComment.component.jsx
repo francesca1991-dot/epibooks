@@ -8,37 +8,63 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 
-const AddComment = ({ asin}) => {
- 
+import {
+   POST_COMMENT_URL,
+   API_KEY
+} from "../../utils/costants";
+
+
+const AddComment = ({ asin, fetchData}) => {
   const [comment, setComment] = useState("");
   const [rating, setRating] = useState("");
   const [author, setAuthor] = useState("");
 
-  const handleCommentChange = (event) => {
-    setComment(event.target.value);
-  };
+//chiamata post
 
-  const handleRatingChange = (event) => {
-    setRating(event.target.value);
-  };
+const postData = async () => {
+  const response = await fetch(POST_COMMENT_URL, {
+    headers: {
+      Authorization: API_KEY,
+      "Content-Type": "application/json",
+    },
+    method: "POST",
+    body: JSON.stringify({
+      comment: comment,
+      rate: rating,
+      elementId: asin,
+    }),
+  });
 
-  const handleAuthorChange = (event) => {
-    setAuthor(event.target.value);
-  };
+  console.log(response);
 
+  if (response.ok) {
+    alert("Commento aggiunto con successo!");
+    fetchData(); // Aggiorna i dati
+  } else {
+    alert("Errore nell'aggiunta del commento.");
+  }
+};
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+// Gestione dell'invio del form
+const handleSubmit = (event) => {
+  event.preventDefault();
 
-    
-    if (!author || !rating || !comment) {
-      alert("Tutti i campi devono essere compilati.");
-      return;
-    }
+  // Controllo di validazione
+  if (!author || !rating || !comment) {
+    alert("Tutti i campi devono essere compilati.");
+    return; // Interrompe l'esecuzione se i campi non sono validi
+  }
 
-  };
+  // Se la validazione è superata, invia i dati
+  postData();
 
-  return (
+  // Resetta i campi del form
+  setComment("");
+  setRating("");
+  setAuthor("");
+};
+  
+    return (
     <Card className="m-2 add-comment">
       <Card.Header as="h6" className="mb-3">Aggiungi un commento</Card.Header>
       <Form className="pb-3" onSubmit={handleSubmit}>
@@ -49,7 +75,7 @@ const AddComment = ({ asin}) => {
                 type="text"
                 placeholder="Autore recensione"
                 className="custom-input"
-                onChange={handleAuthorChange} 
+                onChange={(e) => setAuthor(e.target.value)}
                 value={author}
               />
             </Col>
@@ -58,7 +84,7 @@ const AddComment = ({ asin}) => {
                 type="number"
                 placeholder="Rating (1-5)"
                 className="custom-input"
-                onChange={handleRatingChange}
+                onChange={(e) => setRating(e.target.value)}
                 value={rating}
               />
             </Col>
@@ -69,7 +95,7 @@ const AddComment = ({ asin}) => {
                 type="text"
                 placeholder="Cosa ne pensi di questo libro?"
                 className="custom-input"
-                onChange={handleCommentChange} 
+                onChange={(e) => setComment(e.target.value)}
                 value={comment}
               />
             </Col>
@@ -83,8 +109,8 @@ const AddComment = ({ asin}) => {
       </Form>
     </Card>
   );
-};
 
+};
 export default AddComment;
 
 
