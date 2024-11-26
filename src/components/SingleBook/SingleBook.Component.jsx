@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { ThemeContext } from "../../Contexts/context"; 
 import "./SingleBook.style.css";
 
@@ -11,15 +11,22 @@ import CommentArea from "../CommentArea/CommentArea.Component";
 
 
 function SingleBook(props) {
-  const { title, image, asin } = props;
+  const { title, image, asin , id, idSelected, setIdSelected } = props;
   const [selected, setSelected] = useState(false);
  
   const theme = useContext(ThemeContext);
 
+  useEffect (()=> { setSelected(id === idSelected);
+  }, [id, idSelected]);
+
   const handleCoverClick = () => {
+    if (selected) {
+      setIdSelected(null); 
+    } else {
+      setIdSelected(id); 
+    }
     setSelected(!selected);
   };
-
   return ( 
     <Col
       sm={selected ? 12 : 6}

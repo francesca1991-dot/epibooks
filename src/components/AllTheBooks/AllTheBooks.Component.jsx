@@ -20,7 +20,8 @@ import {ThemeContext} from "../../Contexts/context";
 const AllTheBooks = ({booklist}) => {
 
   const theme = useContext (ThemeContext);
-  
+  const [idSelected, setIdSelected] = useState(null);
+
    return (
       <Container data-bs-theme= {theme}>
         <Row>
@@ -38,7 +39,9 @@ const AllTheBooks = ({booklist}) => {
          image = {book.img}
          asin={book.asin}
          id = {index+1} 
-          />)
+         idSelected={idSelected} 
+         setIdSelected={setIdSelected} 
+        />)
             } )
         }
        </Row>
