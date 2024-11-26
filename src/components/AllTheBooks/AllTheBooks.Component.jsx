@@ -20,8 +20,8 @@ import {ThemeContext} from "../../Contexts/context";
 const AllTheBooks = ({booklist}) => {
 
   const theme = useContext (ThemeContext);
- 
-  return (
+  
+   return (
       <Container data-bs-theme= {theme}>
         <Row>
           <Col>
@@ -33,11 +33,12 @@ const AllTheBooks = ({booklist}) => {
         {booklist.map((book, index) =>{
          return ( 
          <SingleBook 
+         key = {"book" + index }
          title={book.title} 
          image = {book.img}
          asin={book.asin}
-         id = {index+1} key = {"book" + index }
-         />)
+         id = {index+1} 
+          />)
             } )
         }
        </Row>

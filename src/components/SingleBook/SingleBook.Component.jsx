@@ -12,16 +12,15 @@ import CommentArea from "../CommentArea/CommentArea.Component";
 
 function SingleBook(props) {
   const { title, image, asin } = props;
-
   const [selected, setSelected] = useState(false);
-
+ 
   const theme = useContext(ThemeContext);
 
   const handleCoverClick = () => {
     setSelected(!selected);
   };
 
-  return (
+  return ( 
     <Col
       sm={selected ? 12 : 6}
       md={selected ? 12 : 3}
