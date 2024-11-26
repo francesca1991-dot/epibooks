@@ -26,9 +26,9 @@ function App() {
 
     return (
     <div className="App">
-    <MyNav handleChange={handleChange}/>
+    <MyNav handleChange={handleChange} />
     <Welcome />
-    <AllTheBooks booklist={bookList} setBookList={setBookList}/>
+    <AllTheBooks booklist={bookList} />
     <Footer />
      </div> 
  );

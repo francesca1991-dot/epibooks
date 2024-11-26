@@ -13,16 +13,7 @@ import historylist from '../../books/history.json';
 import SingleBook from '../SingleBook/SingleBook.Component';
  
 
-const AllTheBooks = ({booklist, setBookList}) => {
-
-  const handleChange = (event) => {
-    console.log(event.target.value);
-    
-    const filterResult = historylist.filter((book) =>
-      book.title.toLowerCase().includes(event.target.value.toLowerCase()) 
-    );
-    setBookList(filterResult);
-  };
+const AllTheBooks = ({booklist}) => {
 
   return (
     <div>
