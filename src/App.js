@@ -10,6 +10,8 @@ import AllTheBooks from './components/AllTheBooks/AllTheBooks.Component';
 //data import
 import historylist from './books/history.json';
 
+//context import
+import { ThemeContext } from './Contexts/context';
 
 
 function App() {
@@ -24,13 +26,20 @@ function App() {
     setBookList(filterResult);
   };
 
+  const [theme, setTheme]=useState("dark");
+  const toggleTheme = () => {
+    setTheme (theme === "dark" ? "light" : "dark");
+  };
+
     return (
-    <div className="App">
-    <MyNav handleChange={handleChange} />
+      <ThemeContext.Provider value={theme}>
+    <div className={`App ${theme}`} data-bs-theme={theme}>
+    <MyNav handleChange={handleChange} toggleTheme={toggleTheme} />
     <Welcome />
     <AllTheBooks booklist={bookList} />
     <Footer />
      </div> 
+    </ThemeContext.Provider>
  );
 }
 

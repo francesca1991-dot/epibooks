@@ -2,16 +2,20 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { ThemeContext } from "../../Contexts/context"; 
 import "./SingleBook.style.css";
 
 // components imports
 import CommentArea from "../CommentArea/CommentArea.Component";
 
+
 function SingleBook(props) {
   const { title, image, asin } = props;
 
   const [selected, setSelected] = useState(false);
+
+  const theme = useContext(ThemeContext);
 
   const handleCoverClick = () => {
     setSelected(!selected);
@@ -36,7 +40,8 @@ function SingleBook(props) {
                 variant="top"
                 src={image}
               />
-              <Card.Body>
+              <Card.Body  className={theme === "dark" ? "card-body-dark" : "card-body-light"}
+                >
                 <Card.Title>{title}</Card.Title>
               </Card.Body>
             </Card>

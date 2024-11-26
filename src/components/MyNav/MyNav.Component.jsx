@@ -6,26 +6,53 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import './MyNav.Style.css'; 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import ToggleButton from 'react-bootstrap/ToggleButton';
+import { useState, useContext} from "react";
+
+//context import 
+import {ThemeContext} from "../../Contexts/context"
 
 
-function MyNav({handleChange}) {
-   return (
-    <Navbar expand="lg" className="Custom-Navbar">
+function MyNav({handleChange, toggleTheme}) {
+  
+  const [checked, setChecked] = useState(false);
+  const theme= useContext(ThemeContext);
+   
+  return (
+    <Navbar  expand="lg"
+    className={`Custom-Navbar ${theme === "dark" ? "bg-dark navbar-dark" : "bg-light navbar-light"}`}
+    data-bs-theme={theme}>
       <Container>
-        <Navbar.Brand href="#home">EPIBOOKS</Navbar.Brand>
+        <Navbar.Brand href="#home"className="nav-link-custom">EPIBOOKS</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#">Home</Nav.Link>
-            <Nav.Link href="#">About</Nav.Link>
-            <Nav.Link href="#">Browse</Nav.Link>
-          </Nav>
+          <Nav className="me-auto gap-2">
+            <Nav.Link href="#" className="nav-link-custom" >Home</Nav.Link>
+            <Nav.Link href="#" className="nav-link-custom">About</Nav.Link>
+            <Nav.Link href="#" className="nav-link-custom">Browse</Nav.Link>
+            <ButtonGroup className="mb-2">
+        <ToggleButton
+          id="toggle-check"
+          type="checkbox"
+          variant="outline-"
+          checked={checked}
+          value="1"
+          onChange={(e) =>{
+            toggleTheme();
+            setChecked(e.currentTarget.checked);
+          }}
+        >
+          {checked ? "Light" : "Dark"}
+        </ToggleButton>
+      </ButtonGroup>
+     </Nav>
         </Navbar.Collapse>
   <Form className="d-flex" onChange={(e) => handleChange(e)}>
           <Form.Control
             type="text"
             placeholder="Cerca libro"
-            className="mr-sm-2"
+            className="mr-sm-2 Custom-Input "
           />
           <Button className="ms-4 Custom-Button" variant="outline-success" type="submit">Cerca</Button>
         </Form>

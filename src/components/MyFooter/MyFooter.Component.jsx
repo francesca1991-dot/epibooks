@@ -5,13 +5,13 @@ import { Container } from 'react-bootstrap';
 
 function Footer() {
   return (
-    <footer className="Custom-Footer text-black text-center pt-0">
+    <footer className="Custom-Footer text-white text-center pt-0">
       <Container>
      <p>&copy; 2024 Company, Inc. All rights reserved.</p>
       <p>Follow us on:
-        <a href="#" className="text-black">Facebook</a> |
-        <a href="#" className="text-black">Twitter</a> |
-        <a href="#" className="text-black">Instagram</a>
+        <a href="#" className="text-white">Facebook</a> |
+        <a href="#" className="text-white">Twitter</a> |
+        <a href="#" className="text-white">Instagram</a>
       </p>
       </Container>
      </footer>
