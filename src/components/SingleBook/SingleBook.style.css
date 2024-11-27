@@ -26,12 +26,12 @@
 }
 
 .card-body-dark{
-  background-color: rgba(45, 27, 27, 0.854); /* Colore scuro per il tema scuro */
+  background-color: rgba(45, 27, 27, 0.854); 
 }
 
 .card-body-light {
-  background-color: rgba(255, 255, 255, 0.854); /* Colore chiaro per il tema chiaro */
-  color: black; /* Testo nero per il tema chiaro */
+  background-color: rgba(255, 255, 255, 0.854); 
+  color: black; 
 }
 
 
