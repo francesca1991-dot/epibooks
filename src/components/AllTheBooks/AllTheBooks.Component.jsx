@@ -4,6 +4,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 
+//style import
+import './AllTheBooks.style.css'
+
 // data import
 import historylist from "../../books/history.json";
 
@@ -26,7 +29,6 @@ const AllTheBooks = ({ booklist }) => {
       </Row>
 
       <Row>
-        {/*aggiungo le colonna*/}
         <Col sm={6} md={6} lg={8}>
           <Row>
             {booklist.map((book, index) => {
@@ -45,7 +47,7 @@ const AllTheBooks = ({ booklist }) => {
           </Row>
         </Col>
         <Col sm={6} md={6} lg={4}>
-          <Container fluid>
+          <Container fluid  >
             <Row>
               <CommentArea asin={idSelected}/>
             </Row>
