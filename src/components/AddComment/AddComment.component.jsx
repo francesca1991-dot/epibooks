@@ -68,7 +68,7 @@ const handleSubmit = (event) => {
       <Form className="pb-3" onSubmit={handleSubmit}>
         <Container>
           <Row className="my-1">
-            <Col sm={9} className="ps-4">
+            <Col sm={9} className="ps-1">
               <Form.Control
                 type="text"
                 placeholder="Cosa ne pensi di questo libro?"
@@ -77,11 +77,11 @@ const handleSubmit = (event) => {
                 value={comment}
               />
             </Col>
-            <Col sm={3} className="ps-4">
+            <Col sm={3} className="ps-0 pe-1">
               <Form.Control
                 type="number"
                 placeholder="Rating (1-5)"
-                className="custom-input"
+                className="custom-input Rating"
                 onChange={(e) => setRating(e.target.value)}
                 value={rating}
               />
@@ -89,9 +89,9 @@ const handleSubmit = (event) => {
           </Row>
           <Row className="my-1">
           </Row>
-          <Row className="ms-1 mt-2">
+          <Row className="ms-0 mt-2 pe-0">
             <Col sm="auto">
-              <Button className="custom-button" type="submit">Aggiungi un commento</Button>
+              <Button className="custom-button btn btn-secondary" type="submit">Aggiungi un commento</Button>
             </Col>
           </Row>
         </Container>

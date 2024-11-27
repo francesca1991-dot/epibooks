@@ -1,26 +1,28 @@
 .SingleBook {
-  min-height: 420px;
+  min-height: 400px !important;
   transition: border 0.3s ease;
 }
 .img-fluid {
-  height: 300px !important;
-  object-fit: cover;
+  height: 300px;
+  object-fit: fill;
+  border-radius: 5px;
 }
 .card-title {
-  font-size: 12px !important;
+  font-size: 15px !important;
 }
 .card-body {
-  height: 100px;
+  height: 150px;
   padding: 10px 0 10px 5px;
   display: flex;
   align-items: center;
   background-color: rgba(45, 27, 27, 0.854);
 }
 .Card-Container:has(.SingleBook.selected) {
-  border: 2px solid red; 
+  border: 2px solid rgb(247, 96, 96); 
 }
 .Card-Container {
   border: 1px solid rgb(193, 187, 187);
+  border-radius: 5px;
 }
 
 .card-body-dark{
@@ -31,3 +33,6 @@
   background-color: rgba(255, 255, 255, 0.854); /* Colore chiaro per il tema chiaro */
   color: black; /* Testo nero per il tema chiaro */
 }
+
+
+

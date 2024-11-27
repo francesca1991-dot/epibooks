@@ -90,7 +90,7 @@ function CommentArea({ asin }) {
 
   return (
     <div className="comment-area">
-      <h3 className="m-2">Recensioni {asin}</h3>
+      <h3 className="m-2">Recensioni {commentList.length}</h3>
       {commentList.map((commentObj, index) => (
         <CommentList
           commentObj={commentObj}
