@@ -21,7 +21,7 @@ const AllTheBooks = ({ booklist }) => {
     <Container data-bs-theme={theme}>
       <Row>
         <Col>
-          <h1 classN="text-center">Lista dei libri</h1>
+          <h1 className="text-center">Lista dei libri</h1>
         </Col>
       </Row>
 

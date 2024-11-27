@@ -1,26 +1,28 @@
 .SingleBook {
-  min-height: 400px !important;
+  height: 550px !important; /* Altezza totale uniforme */
   transition: border 0.3s ease;
 }
 .img-fluid {
-  height: 300px;
-  object-fit: fill;
+  height: 70% !important;
+  object-fit: cover;
   border-radius: 5px;
 }
 .card-title {
   font-size: 15px !important;
 }
 .card-body {
-  height: 150px;
+  height: 20% !important;
   padding: 10px 0 10px 5px;
   display: flex;
   align-items: center;
   background-color: rgba(45, 27, 27, 0.854);
 }
+
 .Card-Container:has(.SingleBook.selected) {
   border: 2px solid rgb(247, 96, 96); 
 }
 .Card-Container {
+  min-height: 300px;
   border: 1px solid rgb(193, 187, 187);
   border-radius: 5px;
 }
