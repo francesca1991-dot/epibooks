@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 //component imports
 import MyNav from "./components/MyNav/MyNav.Component";
 import Footer from "./components/MyFooter/MyFooter.Component";
-
+import Welcome from "./components/Welcome/Welcome.Component";
 //style import
 import "./App.css";
 
@@ -16,6 +16,7 @@ import historylist from "./books/history.json";
 import { ThemeContext } from "./Contexts/context";
 
 import Homepage from "./pages/Homepage/Homepage.page";
+import NotFound from "./pages/NotFound/NotFound.page";
 
 function App() {
   const [bookList, setBookList] = useState(historylist);
@@ -41,9 +42,10 @@ function App() {
           <MyNav handleChange={handleChange} toggleTheme={toggleTheme} />
           <Routes>
             <Route path="/" element={<Homepage bookList={bookList} />} />
-          </Routes>
-
-          <Footer />
+            <Route path="/login" element={<Welcome />} />
+           <Route path="*" element={<NotFound/>} />
+             </Routes>
+           <Footer />
         </div>
       </ThemeContext.Provider>
     </BrowserRouter>
