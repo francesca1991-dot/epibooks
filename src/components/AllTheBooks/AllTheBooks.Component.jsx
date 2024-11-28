@@ -47,7 +47,7 @@ const AllTheBooks = ({ booklist }) => {
           </Row>
         </Col>
         <Col sm={6} md={6} lg={4} >
-          <Container fluid className="sticky-top" >
+          <Container fluid className="sticky-top" style={{top:"30px"}}>
             <Row>
               <CommentArea asin={idSelected}/>
             </Row>
