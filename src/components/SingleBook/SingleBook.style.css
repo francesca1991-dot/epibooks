@@ -1,5 +1,5 @@
 .SingleBook {
-  height: 550px !important; /* Altezza totale uniforme */
+  height: 550px !important;
   transition: border 0.3s ease;
 }
 .img-fluid {
@@ -35,6 +35,18 @@
   background-color: rgba(255, 255, 255, 0.854); 
   color: black; 
 }
+.SingleBook:hover img{
+  opacity: 0.6;
+  transition: 0.5s;
+}
+.card-button{
+  visibility: hidden;
+  position: absolute;
+  bottom: 164px;
+}
 
-
+.SingleBook:hover .card-button{
+  visibility: visible;
+  transition: 0.5s;
+}
 

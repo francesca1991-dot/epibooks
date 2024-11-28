@@ -2,6 +2,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
+import { Button } from "react-bootstrap";
 import React, { useState, useContext, useEffect } from "react";
 import { ThemeContext } from "../../Contexts/context";
 import "./SingleBook.style.css";
@@ -41,6 +42,7 @@ function SingleBook(props) {
                 variant="top"
                 src={image}
               />
+              <Button className="card-button">Vai al libro</Button>
               <Card.Body
                 className={
                   theme === "dark" ? "card-body-dark" : "card-body-light"
