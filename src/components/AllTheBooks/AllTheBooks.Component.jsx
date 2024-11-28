@@ -30,7 +30,7 @@ const AllTheBooks = ({ booklist }) => {
 
       <Row>
         <Col sm={6} md={6} lg={8}>
-          <Row>
+          <Row >
             {booklist.map((book, index) => {
               return (
                 <SingleBook
@@ -46,8 +46,8 @@ const AllTheBooks = ({ booklist }) => {
             })}
           </Row>
         </Col>
-        <Col sm={6} md={6} lg={4}>
-          <Container fluid  >
+        <Col sm={6} md={6} lg={4} >
+          <Container fluid className="sticky-top" >
             <Row>
               <CommentArea asin={idSelected}/>
             </Row>

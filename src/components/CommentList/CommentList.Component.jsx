@@ -33,7 +33,7 @@ function CommentList({ commentObj, deleteComment, updateComment }) {
   return (
     <Card className="m-2 small">
       <Card.Header as="h6">{rate}/5</Card.Header>
-      <Card.Body className="d-flex flex-column align-items-start h-auto">
+      <Card.Body className="d-flex flex-column align-items-start">
         <Card.Text className="ms-1 text-break">
           <span className="fw-bold">{author}</span>
           {isEditing ? (

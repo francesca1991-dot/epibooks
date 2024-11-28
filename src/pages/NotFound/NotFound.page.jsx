@@ -32,7 +32,7 @@ const ItemNotFound = ({ search }) => {
   return (
     <p>
       Attenzione, l'elemento {search} che stai cercando non esiste o è stato
-      spostato.
+      spostato. Forse è in un'altra categoria.
     </p>
   );
 };
