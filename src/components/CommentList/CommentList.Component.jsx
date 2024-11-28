@@ -34,22 +34,19 @@ function CommentList({ commentObj, deleteComment, updateComment }) {
     <Card className="m-2 small">
       <Card.Header as="h6">{rate}/5</Card.Header>
       <Card.Body className="d-flex flex-column align-items-start h-auto">
-        <Card.Text className="ms-1">
+        <Card.Text className="ms-1 text-break">
           <span className="fw-bold">{author}</span>
           {isEditing ? (
             <>
-              <textarea
+              <textarea 
                 value={updatedComment}
                 onChange={(e) => setUpdatedComment(e.target.value)}
-                rows="3"
-              />
+                />
               <input
                 type="number"
                 value={updatedRate}
                 onChange={(e) => setUpdatedRate(e.target.value)}
-                min="1"
-                max="5"
-              />
+                />
             </>
           ) : (
             " - " + comment
@@ -97,7 +94,7 @@ function CommentList({ commentObj, deleteComment, updateComment }) {
             variant="outline-danger"
             className="ms-2 custom-button"
             onClick={handleSave}
-            disabled={!isEditing} // Il pulsante è disabilitato se non sei in modalità di modifica
+            disabled={!isEditing}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
