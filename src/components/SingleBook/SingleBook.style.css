@@ -42,11 +42,13 @@
 .card-button{
   visibility: hidden;
   position: absolute;
-  bottom: 164px;
+  bottom: 30%;
+  right: 0;
+  left: 0;
 }
 
 .SingleBook:hover .card-button{
   visibility: visible;
-  transition: 0.5s;
+  transition: 0.10s;
 }
 
