@@ -6,6 +6,10 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import MyNav from "./components/MyNav/MyNav.Component";
 import Footer from "./components/MyFooter/MyFooter.Component";
 import Welcome from "./components/Welcome/Welcome.Component";
+import SingleBook from "./components/SingleBook/SingleBook.Component";
+import BookDetails from "./pages/BookDetails/BookDetails.page";
+
+
 //style import
 import "./App.css";
 
@@ -44,6 +48,8 @@ function App() {
             <Route path="/" element={<Homepage bookList={bookList} />} />
             <Route path="/login" element={<Welcome />} />
            <Route path="*" element={<NotFound/>} />
+           <Route path="/" element={<SingleBook />} />
+           <Route path="/Book/:asin" element={<BookDetails />} />
              </Routes>
            <Footer />
         </div>
