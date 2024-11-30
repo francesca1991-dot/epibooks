@@ -5,6 +5,9 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import historylist from "../../books/history.json"; 
 
+//style import
+import './BookDetails.style.css'
+
 const BookDetails = () => {
 
   let { asin } = useParams();
@@ -18,7 +21,7 @@ const BookDetails = () => {
           <img
             src={selectedBook.img}
             alt={selectedBook.title}
-            className="img-fluid rounded"
+            className="img-fluid rounded img-page"
           />
         </Col>
         <Col md={6}>
