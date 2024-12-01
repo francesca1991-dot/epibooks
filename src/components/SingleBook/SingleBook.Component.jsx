@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router";
 
-
+//bootstrap-react imports
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
@@ -14,13 +14,13 @@ import { ThemeContext } from "../../Contexts/context";
 //style import
 import "./SingleBook.style.css";
 
-// components imports
+// components import
 import CommentArea from "../CommentArea/CommentArea.Component";
 
 function SingleBook(props) {
   const { title, image, asin, id, idSelected, setIdSelected } = props;
   const [selected, setSelected] = useState(false);
-  
+
   const theme = useContext(ThemeContext);
 
   useEffect(() => {
@@ -35,8 +35,6 @@ function SingleBook(props) {
     }
     setSelected(!selected);
   };
-
- 
 
   return (
     <Col sm={6} md={6} lg={4} className="mb-4">
@@ -53,10 +51,8 @@ function SingleBook(props) {
                 src={image}
               />
               <Link to={`/Book/${asin}`}>
-              <Button className="card-button">
-                Vai al libro
-                 </Button>
-                 </Link>
+                <Button className="card-button">Vai al libro</Button>
+              </Link>
               <Card.Body
                 className={
                   theme === "dark" ? "card-body-dark" : "card-body-light"

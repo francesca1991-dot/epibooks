@@ -1,14 +1,16 @@
 import React from "react";
+import { useState, useContext} from "react";
+
+//bootstrap-react imports
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import './MyNav.Style.css'; 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
-import { useState, useContext} from "react";
+
 
 //context import 
 import {ThemeContext} from "../../Contexts/context"

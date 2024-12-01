@@ -1,8 +1,11 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
 import { useState, useContext } from "react";
 
+//bootstrap-react import
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+
+//context import
 import {ThemeContext} from "../../Contexts/context"
 
 import iconSave from "./icon-save.png"; 
